@@ -1,4 +1,4 @@
-﻿# Create menus
+﻿# Create menu
 
 function mainMenu {
 
@@ -57,6 +57,9 @@ function CveName {
     # Prompt the user
     $Nsearch = read-host -Prompt "Enter the name of the CVE entry you want to search for."
 
+    #Import CVS from Invoke-WebRequest
+    # Invoke-WebRequest -URI http://192.168.1.32/cve-test.csv -OutFile .\Desktop
+
     #Import CSV
     $CVE = Get-Content "$($env:USERPROFILE)\Downloads\cve-test.csv" | Select -skip 2 | ConvertFrom-Csv
    
@@ -84,6 +87,9 @@ function CveDesc {
 
     # Prompt the user
     $Word = read-host -Prompt "Enter the name of the CVE entry you want to search for."
+
+    #Import CVS from Invoke-WebRequest
+    # Invoke-WebRequest -URI http://192.168.1.32/cve-test.csv -OutFile .\Deskto
 
     #Import CSV
     $CVE = Get-Content "$($env:USERPROFILE)\Downloads\cve-test.csv" | Select -skip 2 | ConvertFrom-Csv
